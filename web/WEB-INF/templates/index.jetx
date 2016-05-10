@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html lang="zh">
+<head>
+    <meta charset="utf-8" />
+    <title>APP手游充值 - 安卓手游充值 - 苹果手游充值 - 发卡发手游服务平台</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta property="qc:admins" content="17415566566131616375" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="keywords" content="游戏交易平台，手机游戏交易，app充值，游戏币交易，网络游戏，游戏币，点卡，装备，账号，fakafa，fakafa.com" />
+    <meta name="description" content="发卡发是国内最专业手游充值服务,提供各种游戏币，手游充值，装备，账号，点卡交易信息,欢迎来到发卡发手游服务平台" />
+    <link rel="shortcut icon" type="image/x-icon" href="//dn-mobilechong.qbox.me/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="//dn-mobilechong.qbox.me/css/common.css" />
+    <link rel="stylesheet" type="text/css" href="//dn-mobilechong.qbox.me/css/index.css" />
+    <link rel="stylesheet" type="text/css" href="//dn-mobilechong.qbox.me/css/jquery-impromptu.min.css" />
+</head>
+<body>
+<div class="viewrap">
+    <header class="header">
+        <h1>
+            <a href="/"><img width="107" height="27" src="//dn-mobilechong.qbox.me/images/logo/logo.png" title="发卡发手游服务平台" alt="发卡发手游服务平台" /></a>
+        </h1>
+			<span id="span_heaser">
+				<a href="/sitemap.html">站点地图</a>
+				#if(obj.user)
+				<a href="/user/index.html">用户</a>
+				<a href="/logout.html">退出</a>
+				#else
+				<a href="/register.html">注册</a>
+				<a href="/login.html">登录</a>
+				#end
+			</span>
+    </header>
+    <div class="index-slide" id="J_index_slide">
+        <div class="index-wrap">
+            <div class="index-slide-box">
+                <ul class="slide_ul">
+                    <li><a href="/buy-i-1416-wojiaoMT2.html" title="我叫MT2苹果版，发卡发手游服务平台充值95折优惠"><img src="//dn-mobilechong.qbox.me/images/banners/wjmt2.jpg" alt="我叫MT2苹果版，发卡发手游服务平台充值95折优惠" /></a></li>
+                    <li><a href="/buy-i-1400-quanminqijiMU.html" title="全民奇迹-MU苹果版，发卡发手游服务平台充值95折优惠"><img src="//dn-mobilechong.qbox.me/images/banners/qmqj.jpg" alt="全民奇迹-MU苹果版，发卡发手游服务平台充值95折优惠" /></a></li>
+                    <li><a href="/buy-i-1281-taijixiongmao.html" title="太极熊猫拍苹果版，发卡发手游服务平台充值95折优惠"><img src="//dn-mobilechong.qbox.me/images/banners/tjxm.jpg" alt="太极熊猫拍苹果版，发卡发手游服务平台充值95折优惠" /></a></li>
+                </ul>
+            </div>
+            <ul class="index-slide-trigger trigger"></ul>
+        </div>
+    </div>
+    <nav class="index-nav">
+        <ul>
+            <li><a href="/user/index.html"> <span class="iconfont">&#xe639;</span>
+                <p>用户账户中心</p>
+            </a></li>
+            <li><a href="javascript:void(0);" onclick='javascript:jQuery.prompt("该功能暂未开通",{title: "发卡发提示", buttons: { "朕知道了": true}});'> <span class="iconfont">&#xe606;</span>
+                <p>卡类回收兑换</p>
+            </a>
+            </li>
+            <li><a href="/apple.html"> <span class="iconfont">&#xe631;</span>
+                <p>苹果手游充值</p>
+            </a>
+            </li>
+        </ul>
+    </nav>
+    <nav class="hot-game">
+        <ul>
+            <li><a href="/buy-i-1416-wojiaoMT2.html">我叫MT2 苹果版</a></li>
+            <li><a href="/buy-i-1000-daotachuanqi.html">刀塔传奇苹果版</a></li>
+            <li><a href="/buy-i-1285-tianlongbabu3D.html">天龙八部3D苹果版</a></li>
+        </ul>
+        <ul>
+            <li><a href="/buy-i-1025-tiantiankupao.html">天天酷跑苹果版</a></li>
+            <li><a href="/buy-i-1023-tiantianxuandou.html">天天炫斗苹果版</a></li>
+            <li><a href="/buy-i-1281-taijixiongmao.html">太极熊猫苹果版</a></li>
+        </ul>
+        <ul>
+            <li><a href="/buy-i-1028-fangkaineisanguo.html">放开那三国苹果版</a></li>
+            <li><a href="/buy-i-1024-leitingzhanji.html">雷霆战机苹果版</a></li>
+            <li><a href="/buy-i-1400-quanminqijiMU.html">全民奇迹MU苹果版</a></li>
+        </ul>
+    </nav>
+    <form id="searchForm" method="get" action="/search" autocomplete="off">
+        <section class="select-inp">
+            <input type="text" id="gname" name="gname" class="search" maxlength="20" placeholder="请输入游戏名称、拼音或首字母查询" />
+            <a class="select-img" onclick="indexSearch();" href="javascript:void(0);"><img width="23" height="23" src="//dn-mobilechong.qbox.me/images/css/search.png" alt="游戏搜索" /></a>
+        </section>
+    </form>
+    <div class="m-serwrap">
+        <a class="m-service" target="_blank" href="tel:02566177114">客服电话：025-66177-114</a>
+    </div>
+    #include("/include/foot.jetx")
+</div>
+<script language="javascript" type="text/javascript" src="//cdnjsnet.b0.upaiyun.com/jquery/1.7.2/jquery.min.js"></script>
+<script language="javascript" type="text/javascript" src="//dn-mobilechong.qbox.me/js/jquery-impromptu.min.js"></script>
+<script language="javascript" type="text/javascript" src="//dn-mobilechong.qbox.me/js/sntouch.js"></script>
+<script language="javascript" type="text/javascript" src="//dn-mobilechong.qbox.me/js/slide.js"></script>
+<script language="javascript" type="text/javascript" src="//dn-mobilechong.qbox.me/js/search.js"></script>
+</body>
+</html>

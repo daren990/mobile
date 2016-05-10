@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8" />
+    <title>注册 - 发卡发手游服务平台</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="keywords" content="游戏交易平台，手机游戏交易，app充值，游戏币交易，网络游戏，游戏币，点卡，装备，账号，fakafa，fakafa.com" />
+    <meta name="description" content="发卡发是国内最专业手游充值服务,提供各种游戏币，手游充值，装备，账号，点卡交易信息,欢迎来到发卡发手游服务平台" />
+    <link rel="shortcut icon" type="image/x-icon" href="//dn-mobilechong.qbox.me/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="//dn-mobilechong.qbox.me/css/common.css" />
+    <link rel="stylesheet" type="text/css" href="//dn-kaduihuan.qbox.me/css/jquery.validator-0.8.0.css" />
+</head>
+<body class="mWrap">
+<header class="topHd">
+    <a href="/apple.html" class="back">&#xe634;</a>
+    <a href="/" class="home">&#xe634;</a>
+    <span>会员注册</span>
+</header>
+<form id="registerForm" method="post" action="/register.html" autocomplete="off" data-validator-option="{theme:'simple_bottom',stopOnError:true}" >
+    <section class="mContent">
+        <ul class="form showOne">
+            <li><input type="text" class="input" id="email" name="email" maxlength="30" placeholder="请输入电子邮件" data-rule="电子邮件: required;email;remote[/checkEmail.html]" /></li>
+            <li><input type="password" class="input" id="password" name="password" maxlength="20" placeholder="请输入密码" data-rule="密码: required;password;length[6~20]" /></li>
+            <li><input type="password" class="input" id="repassword" name="repassword" maxlength="20" placeholder="请确认密码" data-rule="确认密码: required;match(password);" /></li>
+            <li><input type="submit" class="btn" value="注册账号" /></li>
+            <li class="tcenter pusht"><label><input type="checkbox" readonly="readonly" id="checkBoxId" checked="checked" />我同意</label>
+                <a href="#" class="blue">《发卡发服务协议》</a></li>
+            <p class="hzlogin">
+                <a href="/login/weibo.html" class="weibo" title="微博登录"><b></b><i>微博</i></a>
+                <a href="/login/qq.html" class="qq" title="QQ登录"><b></b><i>QQ</i></a>
+                <a href="/login/alipay.html" class="alipay" title="支付宝登录"><b></b><i>支付宝</i></a>
+                <a href="/login/qihu.html" class="qihu" title="360登录"><b></b><i>360</i></a>
+            </p>
+        </ul>
+    </section>
+</form>
+#include("/include/foot.jetx")
+<script language="javascript" type="text/javascript" src="//cdnjsnet.b0.upaiyun.com/jquery/1.7.2/jquery.min.js"></script>
+<script language="javascript" type="text/javascript" src="//dn-kaduihuan.qbox.me/js/jquery.validator-0.8.0.js"></script>
+<script language="javascript" type="text/javascript" src="//dn-kaduihuan.qbox.me/js/jquery.validator-0.8.0.lang.zh-CN.js"></script>
+<script language="javascript" type="text/javascript" src="//dn-mobilechong.qbox.me/js/m.js"></script>
+</body>
+</html>

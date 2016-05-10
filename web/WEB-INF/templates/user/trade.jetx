@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8" />
+    <title>我的订单 - fakafa.com - 做最专业的手游服务平台</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="keywords" content="游戏交易平台，手机游戏交易，app充值，游戏币交易，网络游戏，游戏币，点卡，装备，账号，fakafa，fakafa.com" />
+    <meta name="description" content="发卡发是国内最专业手游充值服务,提供各种游戏币，手游充值，装备，账号，点卡交易信息,欢迎来到发卡发手游服务平台" />
+    <link rel="shortcut icon" type="image/x-icon" href="//dn-mobilechong.qbox.me/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="//dn-mobilechong.qbox.me/css/buy.css" />
+</head>
+<body class="mWrap">
+<header class="topHd"><a href="/user/index.html" class="back">返回</a><a href="/" class="home">首页</a>
+    <span>我的订单</span>
+</header>
+<form id="queryForm" method="post">
+    <section class="mContent">
+        <hgroup class="ctTit"><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=100110566&site=qq&menu=yes"><ins class="sbtn">在线客服</ins></a><small class="right orange">30分钟未支付会自动取消订单</small></hgroup>
+        #if (obj.trades)
+        #for (om.kaduihuan.bean.Order order : obj.orders)
+        <ul class="form orderList">
+            <li>
+                <p>订单编号：${order.id}</p>
+                <p>创建时间：${order.orderTime.format("yyyy-MM-dd HH:mm")}</p>
+                <p class="blue ftb"><a href="#if (order.plid==1)/buy-i-${order.gid}.html#elseif (order.plid==2)/buy-a-1-${order.gid}.html#elseif (order.plid==3)/buy-o-${order.gid}.html#elseif (order.plid==4)/buy-w-${order.gid}.html#else javascript:void(0)#end">${order.gname}${order.type}</a></p>
+                <p>${(order.AName)!''}/${order.oname}/${order.num}服【${order.sname}】</p>
+                <p><span class="pushl">${(order.face)?!'0'}元(${order.standard})*${(order.quantity)?!'1'}</span> = <font class="red">${(order.price*order.quantity.asDouble()).format("#.00")}</font>元</p>
+                <p class="orange ftb">
+                    #if (order.status=='0')
+                    <a href="/payment.html?id=${order.id}" class="right"><ins class="sbtn">付 款</ins></a>
+                    #elseif (order.status=='1')
+                    <a title="已完成付款，请等待发货" class="right"><ins class="black">完成付款</ins></a>
+                    #elseif (order.status=='2')
+                    <a title="已完成充值，请去订单详情查看" class="right"><ins class="blue">订单完成</ins></a>
+                    #elseif (order.status=='3')
+                    <a title="下单超过30分钟未支付，超时系统自动取消订单，如若需要，请重新下单" class="right"><ins class="oatmeal">订单取消</ins></a>
+                    #elseif (order.status=='4')
+                    <a title="充值信息异常无法联系客户或者其他原因，钱款会原路返还" class="right"><ins class="gray">订单撤销</ins></a>
+                    #else
+                    <a title="订单状态异常" class="right"><ins class="red">订订单未知</ins></a>
+                    #end
+                    <a class="blue" href="/user/detail.html?id=${order.id}">详情</a>
+                </p>
+            </li>
+        </ul>
+        #end
+        #else
+        <ul class="form orderList">
+            <li>
+                <p>亲，没有相关订单哦~~ （=ˇωˇ=）</p>
+            </li>
+        </ul>
+        #end
+    </section>
+</form>
+#include("/include/foot.jetx")
+<script language="javascript" type="text/javascript" src="//cdnjsnet.b0.upaiyun.com/jquery/1.7.2/jquery.min.js"></script>
+<script language="javascript" type="text/javascript" src="//dn-mobilechong.qbox.me/js/m.js"></script>
+</body>
+</html>

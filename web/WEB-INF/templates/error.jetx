@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+#set(com.kaduihuan.bean.ErrorRemark error=obj.error)
+<html lang="zh">
+<head>
+    <meta charset="utf-8" />
+    <title>${error.code} - ${error.explanation} - 发卡发触屏版 - 做最专业的手游服务平台</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="发卡发中国网络游戏交易门户,征途|热血江湖|武林外传|梦幻西游等网络游戏领先交易平台,是中国电子商务诚信单位。"/>
+    <meta name="keywords" content="发卡发,AppStore充值,手游交易,苹果手游直充,网游交易,热血江湖,武林外传,魔域,巨人,赤壁,梦幻西游,魔兽世界,千年3"/>
+    <link rel="shortcut icon" type="image/x-icon" href="//dn-mobilechong.qbox.me/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="//dn-mobilechong.qbox.me/css/common.css" />
+</head>
+<body class="mWrap">
+<header class="topHd"><a href="/apple.html" class="back">返&nbsp;&nbsp;回</a><a href="/" class="home">首页</a><span>${error.code}</span></header>
+<section class="mContent">
+
+    <hgroup class="formTit">信息反馈</hgroup>
+    <ul class="form formul">
+        <li><label>非常抱歉，</label><span class="blue">${error.remark}！</span></li>
+        <li class="btnArea"><input type="button" onClick="javascript:window.location.href='/'" class="btn" value="返回首页" /></li>
+    </ul>
+</section>
+#include("/include/foot.jetx")
+<script language="javascript" type="text/javascript" src="//cdnjsnet.b0.upaiyun.com/jquery/1.7.2/jquery.min.js"></script>
+<script language="javascript" type="text/javascript" src="//dn-mobilechong.qbox.me/js/m.js"></script>
+</body>
+</html>

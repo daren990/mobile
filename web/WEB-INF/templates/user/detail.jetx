@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+#set(com.kaduihuan.bean.User user=obj.user)
+#set(com.kaduihuan.bean.Order order=obj.order)
+#set(com.kaduihuan.bean.Payment payment=obj.payment)
+<html lang="zh">
+<head>
+    <meta charset="utf-8" />
+    <title>订单编号${order.id}详情 - fakafa.com - 做最专业的手游服务平台</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="keywords" content="游戏交易平台，手机游戏交易，app充值，游戏币交易，网络游戏，游戏币，点卡，装备，账号，发卡发，fakafa.com" />
+    <meta name="description" content="发卡发是国内最专业手游充值服务,提供各种游戏币，手游充值，装备，账号，点卡交易信息,欢迎来到发卡发手游服务平台" />
+    <link rel="shortcut icon" type="image/x-icon" href="//dn-mobilechong.qbox.me/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="//dn-mobilechong.qbox.me/css/buy.css" />
+</head>
+<body class="mWrap">
+<header class="topHd"><a href="javascript:history.back();" class="back">返回</a><a href="/" class="home">首页</a><span>订单详情</span></header>
+<section class="mContent">
+    <hgroup class="formTit">订单信息</hgroup>
+    <ul class="form formul">
+        <li><label>订单编号：</label><span class="blue">${order.id}</span></li>
+        <li><label>提交时间：</label>${order.orderTime.fomat("yyyy-MM-dd HH:mm")}</li>
+        <li><label>商品名称：</label><span class="blue">${order.gname}${order.pname}${order.type}</span></li>
+        <li><label>版本：</label>${order.oname}</li>
+        <li><label>区服：</label>${order.aname}${order.num}服(${order.sname})</li>
+        <li><label>充值账号：</label>${order.account}</li>
+        <li><label>角色名称：</label>${order.juese}</li>
+        #if (order.type== '安卓首充号')
+        <li><label>帐号密码：</label>${order.pswd}</li>
+        <li><label>帐号信息：</label>${obj.hao}</li>
+        #end
+        <li><label>联系方式：</label>${order.mobile}&nbsp;${order.qq}</li>
+        <li><label>充值详情：</label>${(order.face)?!'0'}元(${order.standard}*${(order.quantity)?!'1'})</li>
+        <li><label>订单金额：</label><span class="orange">${order.price}×${order.quantity}=${(order.price*order.quantity.asDouble()).format("#.00")}元</span></li>
+        <li><label>订单状态：</label><span class="darkGreen">#if (order.status=='0')待付款#elseif (order.status=='1')已付款#elseif (order.status=='2')已完成#elseif (order.status=='3')已取消#elseif (order.status=='4')已撤销#else未知#end</span></li>
+        #if (order.status=='1' || order.status=='2' || order.status=='4')
+        #if (payment)
+        <li><label>支付方式：</label>${payment.payName} - ${payment.tsn}</li>
+        <li><label>支付时间：</label>${payment.backTime.fomat("yyyy-MM-dd HH:mm")}</li>
+        <li><label>支付金额：</label><span class="red">${payment.actual}元</span></li>
+        <li><label>支付状态：</label><span class="darkGreen">#if (payment.status=='0')待付款#elseif (payment.status=='1')已付款#elseif (payment.status=='2')]已退款#else未知#end</span></li>
+        #end
+        #end
+        #if (order.status=='4')
+        <li><label>撤单原因：</label>${order.remark}</li>
+        #end
+    </ul>
+</section>
+#include("/include/foot.jetx")
+<script language="javascript" type="text/javascript" src="//cdnjsnet.b0.upaiyun.com/jquery/1.7.2/jquery.min.js"></script>
+<script language="javascript" type="text/javascript" src="//dn-mobilechong.qbox.me/js/m.js"></script>
+</body>
+</html>

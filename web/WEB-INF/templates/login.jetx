@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html lang="zh">
+<head>
+    <meta charset="utf-8" />
+    <title>登录 - 发卡发手游服务平台</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="keywords" content="游戏交易平台，手机游戏交易，app充值，游戏币交易，网络游戏，游戏币，点卡，装备，账号，发卡发，fakafa.com" />
+    <meta name="description" content="发卡发是国内最专业手游充值服务,提供各种游戏币，手游充值，装备，账号，点卡交易信息,欢迎来到发卡发手游服务平台" />
+    <link rel="shortcut icon" type="image/x-icon" href="//dn-mobilechong.qbox.me/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="//dn-mobilechong.qbox.me/css/common.css" />
+    <link rel="stylesheet" type="text/css" href="//dn-mobilechong.qbox.me/css/com-min.css" />
+    <link rel="stylesheet" type="text/css" href="//dn-kaduihuan.qbox.me/css/jquery.validator-0.8.0.css" />
+    <link rel="stylesheet" type="text/css" href="//dn-mobilechong.qbox.me/css/jquery-impromptu.min.css" />
+</head>
+<body>
+<div class="viewrap">
+    <header class="topHd">
+        <a href="/apple.html" class="back">&#xe635;</a>
+        <a href="/" class="home">&#xe634;</a>
+        <span>会员登录</span>
+    </header>
+    <section class="mContent">
+        <div class="form login">
+            <form id="loginForm" method="post" action="/login.html" autocomplete="off" data-validator-option="{theme:'simple_bottom',stopOnError:true}" >
+                <p>
+                    <input type="hidden" value="${obj.returnUrl}" id="returnUrl" name="returnUrl" />
+                    <input type="text" maxlength="30" style="ime-mode:disabled" class="input" placeholder="请输入电子邮箱" id="email" name="email" data-rule="电子邮件: required;email;remote[/verifyemail.html]" />
+                </p>
+                <p>
+                    <input type="password" class="input" maxlength="20" placeholder="请输入登录密码" id="password" name="password" data-rule="密码: required;password;length[6~20];remote[/checkpasswd.html, email, password]" />
+                </p>
+                <p class="btnArea">
+                    <input type="submit" id="hlkOK" class="btn" value="登&nbsp;&nbsp;录" />
+                </p>
+                <p class="noLogin">
+                    <a href="/findpswd.html" class="right">忘记密码</a>
+                    <a href="/register.html">用户注册</a>
+                </p>
+                <p class="hzlogin">
+                    <a href="/login/weibo.html" class="weibo" title="微博登录"><b></b><i>微博</i></a>
+                    <a href="javascript:void(0);" onclick='javascript:jQuery.prompt("该功能审核中",{title: "发卡发提示", buttons: { "朕知道了": true}});' class="qq" title="QQ登录"><b></b><i>QQ</i></a>
+                    <a href="/login/alipay.html" class="alipay" title="支付宝登录"><b></b><i>支付宝</i></a>
+                    <a href="/login/qihu.html" class="qihu" title="360登录"><b></b><i>360</i></a>
+                </p>
+            </form>
+        </div>
+    </section>
+    #include("/include/foot.jetx")
+<script language="javascript" type="text/javascript" src="//cdnjsnet.b0.upaiyun.com/jquery/1.7.2/jquery.min.js"></script>
+<script language="javascript" type="text/javascript" src="//dn-kaduihuan.qbox.me/js/jquery.validator-0.8.0.js"></script>
+<script language="javascript" type="text/javascript" src="//dn-kaduihuan.qbox.me/js/jquery.validator-0.8.0.lang.zh-CN.js"></script>
+<script language="javascript" type="text/javascript" src="//dn-mobilechong.qbox.me/js/jquery-impromptu.min.js"></script>
+</div>
+</body>
+</html>

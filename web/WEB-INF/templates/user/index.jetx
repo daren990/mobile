@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+#set(com.kaduihuan.bean.User user=obj.user)
+#set(com.kaduihuan.bean.LoginLogs logs=obj.logs)
+<html lang="zh">
+<head>
+    <meta charset="utf-8" />
+    <title>个人中心-  -做最专业的手游服务平台</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="keywords" content="游戏交易平台，手机游戏交易，app充值，游戏币交易，网络游戏，游戏币，点卡，装备，账号，发卡发，fakafa.com" />
+    <meta name="description" content="发卡发是国内最专业手游充值服务,提供各种游戏币，手游充值，装备，账号，点卡交易信息,欢迎来到发卡发手游服务平台" />
+    <link rel="shortcut icon" type="image/x-icon" href="//dn-mobilechong.qbox.me/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="//dn-mobilechong.qbox.me/css/buy.css" />
+</head>
+<body class="mWrap">
+<header class="topHd"><a href="javascript:history.back();" class="back">&#xe635;</a><a href="/" class="home">&#xe634;</a><span>会员中心</span></header>
+<section class="mContent">
+    <article class="userInfo">
+        <p title="${(user.email)?!'游客'}">#if(user.email.indexOf("@quicklogin.qq")!=-1)QQ用户_#elseif(user.email.indexOf("@quicklogin.360")!=-1)360用户_#elseif(user.email.indexOf("@quicklogin.alipay")!=-1)支付宝用户_#elseif(user.email.indexOf("@quicklogin.weibo")!=-1)微博用户_#elseif(user.email.indexOf("@quicklogin.unionpay")!=-1)银联用户_#else${(user.email)?!'游客'}#end${user.nickName}<span class="right"><a href="/logout.html">退出</a></span></p>
+        <p class="uInfoG">上次登录时间：<span class="orange">#if(logs.loginDate)${(logs.loginDate).format("yyyy-MM-dd HH:mm:ss")}#else未登录#end</span></p>
+        <p class="uInfoG">上次登录IP：<span class="orange"><a target="_bank" href="http://ip.cn/ip-${logs.ip}.html" title="点击查看IP地区">${(logs.ip)?!'未登录'}</a></span></p>
+        <ul class="transverse userGo clearfix">
+            <li><a href="/apple.html"><s class="icon iBag"></s>我要买</a></li>
+            <li></li>
+            <li><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=100110566&site=qq&menu=yes"><ins class="sbtn">在线客服</ins></a></li>
+        </ul>
+    </article>
+    <ul class="tlist column2 userTwoCen">
+        <li><a href="/user/modifypswd.html" class="safe">账户安全中心</a></li>
+        <li><a href="/user/realauth.html" class="seller">实名认证</a></li>
+    </ul>
+    <ul class="myList clearfix" id="buyerul">
+        <li><a href="/user/trade-0.html"><i class="arrow"></i><s class="icon trade-0"></s>待付款订单</a></li>
+        <li><a href="/user/trade-1.html"><i class="arrow"></i><s class="icon trade-1"></s>已付款订单</a></li>
+        <li><a href="/user/trade-a.html"><i class="arrow"></i><s class="icon trade-a"></s>所有的订单</a></li>
+        <li><a href="/user/trade-2.html"><i class="arrow"></i><s class="icon trade-2"></s>已完成订单</a></li>
+        <li><a href="/user/trade-4.html"><i class="arrow"></i><s class="icon trade-4"></s>撤销的订单</a></li>
+        <li><a href="tel:02566177114" target="_blank"><i class="arrow"></i><s class="icon phone"></s>客服电话</a></li>
+    </ul>
+</section>
+#include("/include/foot.jetx")
+<script language="javascript" type="text/javascript" src="//cdnjsnet.b0.upaiyun.com/jquery/1.7.2/jquery.min.js"></script>
+<script language="javascript" type="text/javascript" src="//dn-mobilechong.qbox.me/js/m.js"></script>
+</body>
+</html>

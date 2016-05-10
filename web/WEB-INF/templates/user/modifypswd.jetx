@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+#set(com.kaduihuan.bean.User user=obj.user)
+<html lang="zh">
+<head>
+    <meta charset="utf-8" />
+    <title>修改密码 - 发卡发手游服务平台</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="keywords" content="游戏交易平台，手机游戏交易，app充值，游戏币交易，网络游戏，游戏币，点卡，装备，账号，发卡发，fakafa.com" />
+    <meta name="description" content="发卡发是国内最专业手游充值服务,提供各种游戏币，手游充值，装备，账号，点卡交易信息,欢迎来到发卡发手游服务平台" />
+    <link rel="shortcut icon" type="image/x-icon" href="//dn-mobilechong.qbox.me/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="//dn-mobilechong.qbox.me/css/buy.css" />
+    <link rel="stylesheet" type="text/css" href="//dn-kaduihuan.qbox.me/css/jquery.validator-0.8.0.css" />
+</head>
+<body class="mWrap">
+<header class="topHd">
+    <a href="/user/index.html" class="back">&#xe634;</a>
+    <a href="/" class="home">&#xe634;</a>
+    <span>修改密码</span>
+</header>
+#if (user.password=='QuickLogin')
+<section class="mContent">
+    <ul class="form orderList">
+        <li>
+            <p>快捷登录的用户没有密码可修改，如需帮助请联系客服。 （=ˇωˇ=）</p>
+        </li>
+    </ul>
+</section>
+#else
+<form id="modifypswdForm" method="post" action="/user/modifypswd.html" autocomplete="off" data-validator-option="{theme:'simple_bottom',stopOnError:true}" >
+    <section class="mContent">
+        <ul class="form showOne">
+            <li>
+                <input type="password" id="pswd" name="pswd" class="input" maxlength="20" placeholder="请输入当前密码" data-rule="当前密码：required;password;remote[/verifyPassword.html]" />
+            </li>
+            <li><input type="password" id="password" name="password" class="input" maxlength="20" placeholder="请输入新密码" data-rule="新的密码: required;password;length[6~20]" /></li>
+            <li><input type="password" id="repassword" id="repassword" class="input" maxlength="20" placeholder="请确认新密码" data-rule="确认新密码: required;match(password);" /></li>
+            <li class="btnArea"><input type="submit" class="btn" value="修改密码" /></li>
+        </ul>
+    </section>
+</form>
+#end
+#include("/include/foot.jetx")
+<script language="javascript" type="text/javascript" src="//cdnjsnet.b0.upaiyun.com/jquery/1.7.2/jquery.min.js"></script>
+<script language="javascript" type="text/javascript" src="//dn-kaduihuan.qbox.me/js/jquery.validator-0.8.0.js"></script>
+<script language="javascript" type="text/javascript" src="//dn-kaduihuan.qbox.me/js/jquery.validator-0.8.0.lang.zh-CN.js"></script>
+<script language="javascript" type="text/javascript" src="//dn-mobilechong.qbox.me/js/m.js"></script>
+</body>
+</html>

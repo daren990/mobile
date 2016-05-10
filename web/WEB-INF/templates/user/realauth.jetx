@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+#set(com.kaduihuan.bean.User user=obj.user)
+#set(com.kaduihuan.bean.Realauth realauth=obj.realauth)
+<html lang="zh">
+<head>
+    <meta charset="utf-8" />
+    <title>实名认证 - 发卡发手游服务平台</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="keywords" content="游戏交易平台，手机游戏交易，app充值，游戏币交易，网络游戏，游戏币，点卡，装备，账号，发卡发，fakafa.com" />
+    <meta name="description" content="发卡发是国内最专业手游充值服务,提供各种游戏币，手游充值，装备，账号，点卡交易信息,欢迎来到发卡发手游服务平台" />
+    <link rel="shortcut icon" type="image/x-icon" href="//dn-mobilechong.qbox.me/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="//dn-mobilechong.qbox.me/css/buy.css" />
+    <link rel="stylesheet" type="text/css" href="//dn-kaduihuan.qbox.me/css/jquery.validator-0.8.0.css" />
+</head>
+<body class="mWrap">
+<header class="topHd">
+    <a href="/user/index.html" class="back">&#xe634;</a>
+    <a href="/" class="home">&#xe634;</a>
+    <span>实名认证</span>
+</header>
+#if(realAuth)
+<section class="mContent">
+    <ul class="form orderList">
+        <li><label>真实姓名：</label><span class="blue">${realauth.realName.substring(0, 1)}**</span></li>
+        <li><label>身份证号：</label><span class="red">${realauth.idCard.substring(0, 5)}***********</span></li>
+        <li>
+            <p>按照版署《网络游戏未成年人防沉迷系统》要求</p>
+            <p>为预防青少年过度游戏，未满18岁的用户和身份信息不完整的用户将受到防沉迷系统的限制，91085手游服务平台积极响应国家新闻出版总署防沉迷政策要求，开发出网页游戏防沉迷系统。</p>
+            <p>年龄已满18周岁的玩家，在填写身份证资料后，可以不受防沉迷系统影响，自由进行游戏，否则游戏每日在线3小时后即打怪经验减半,超过5小时则无经验。</p>
+            <p>说明：系统只支持输入18位的中国身份证号码，持有其他证件（如：外国护照，军人证，等）者，请与在线客服联系处理。填写身份信息将使我们可以对您的年龄做出判断，以确定您的游戏时间是否需要按照国家新闻出版总署的要求纳入防沉迷系统的管理。</p>
+            <p>隐私说明：用户填写的身份信息属于用户的隐私。91085手游服务平台绝对尊重用户个人隐私权。所以，91085手游服务平台绝不会公开，编辑或透露用户的信息内容，除非有法律许可及公安管理规定。</p>
+        </li>
+    </ul>
+</section>
+#else
+<form id="modifypswdForm" method="post" action="/user/realauth.html" autocomplete="off" data-validator-option="{theme:'simple_bottom',stopOnError:true}" >
+    <section class="mContent">
+        <ul class="form showOne">
+            <li>
+                <input type="text" id="realname" name="realname" class="input" maxlength="10" placeholder="请输入真实姓名" data-rule="真实姓名: required;chinese;length[2~10];" />
+            </li>
+            <li><input type="text" class="input" id="idcard" name="idcard" maxlength="18" placeholder="请输入身份证号码" data-rule="身份证号码: required;ID_card;length[18];" /></li>
+            <li class="btnArea"><input type="submit" class="btn" value="认证实名" /></li>
+        </ul>
+    </section>
+</form>
+#end
+#include("/include/foot.jetx")
+<script language="javascript" type="text/javascript" src="//cdnjsnet.b0.upaiyun.com/jquery/1.7.2/jquery.min.js"></script>
+<script language="javascript" type="text/javascript" src="//dn-kaduihuan.qbox.me/js/jquery.validator-0.8.0.js"></script>
+<script language="javascript" type="text/javascript" src="//dn-kaduihuan.qbox.me/js/jquery.validator-0.8.0.lang.zh-CN.js"></script>
+<script language="javascript" type="text/javascript" src="//dn-mobilechong.qbox.me/js/m.js"></script>
+</body>
+</html>

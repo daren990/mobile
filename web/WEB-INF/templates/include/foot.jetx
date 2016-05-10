@@ -1,0 +1,8 @@
+<footer class="Mfoot">
+    <p class="nav"><a href="/">站点首页</a><em>|</em><a href="/apple.html">苹果充值</a><em>|</em><a href="/notice.html">帮助中心</a><em>|</em><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=100110566&site=qq&menu=yes">在线客服</a></p>
+    <!--<p class="cp"><a href="http://www.fakafa.com/">电脑版</a></p>-->
+    <p class="copyright">&copy;2015 m.fakafa.com 苏ICP备15029790号</p>
+    <div style="display: none;">
+        <script src="//s4.cnzz.com/z_stat.php?id=1256625845&web_id=1256625845" language="JavaScript"></script>
+    </div>
+</footer>

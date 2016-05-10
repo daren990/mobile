@@ -1,0 +1,104 @@
+
+<!DOCTYPE HTML>
+<html lang="zh">
+<head>
+    <meta charset="utf-8" />
+    <title>网站帮助 - 发卡发手游服务平台</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="发卡发中国网络游戏交易门户,征途|热血江湖|武林外传|梦幻西游等网络游戏领先交易平台,是中国电子商务诚信单位。" />
+    <meta name="keywords" content="发卡发,AppStore充值,手游交易,苹果手游直充,网游交易,热血江湖,武林外传,魔域,巨人,赤壁,梦幻西游,魔兽世界,千年3" />
+    <link rel="shortcut icon" type="image/x-icon" href="//dn-mobilechong.qbox.me/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="//dn-mobilechong.qbox.me/css/common.css" />
+    <link rel="stylesheet" type="text/css" href="//dn-mobilechong.qbox.me/css/com-min.css" />
+</head>
+<body>
+<div class="viewrap">
+    <header class="topHd"><a href="javascript:history.go(-1);" class="back">&#xe635;</a><a href="/" class="home">&#xe634;</a><span>帮助中心</span></header>
+    <div class="help-c-wrap" id="help-c-wrap">
+        <dl>
+            <b class="iconfont jt-down">&#xe63b;</b><b class="iconfont jt-up">&#xe63a;</b>
+            <dt>如何切换到7881主站？</dt>
+            <dd>点击每一个页面最下方的“电脑版”，即可访问7881主站。</dd>
+        </dl>
+        <dl>
+            <b class="iconfont jt-down">&#xe63b;</b><b class="iconfont jt-up">&#xe63a;</b>
+            <dt>如何注册7881账户？</dt>
+            <dd>
+                <p>返回主页，点击右上角“注册”→输入手机号码→输入图形码→点击“获取验证码”→输入验证码→设置登录密码→完成注册。</p>
+                <p>若您没有收到短信验证码，点击右侧“收不到验证码？”</p>
+                选择“OK”,我们向您发送语音验证码，按照语音提示输入验证码，点击下一步--完成。
+            </dd>
+        </dl>
+        <dl>
+            <b class="iconfont jt-down">&#xe63b;</b><b class="iconfont jt-up">&#xe63a;</b>
+            <dt>如何充值苹果手游？</dt>
+            <dd>点击“苹果手游充值”→根据游戏首字母选择游戏→选择并填写购买信息→确认购买信息→付款→完成充值。</dd>
+        </dl>
+        <dl>
+            <b class="iconfont jt-down">&#xe63b;</b><b class="iconfont jt-up">&#xe63a;</b>
+            <dt>如何充值安卓手游？</dt>
+            <dd>点击“安卓手游充值”→根据游戏首字母选择游戏→选择并填写购买信息→确认购买信息→付款→完成充值。</dd>
+        </dl>
+        <dl>
+            <b class="iconfont jt-down">&#xe63b;</b><b class="iconfont jt-up">&#xe63a;</b>
+            <dt>7881支持哪种支付方式？</dt>
+            <dd>
+                <p>7881手机版在线支付目前仅支持支付宝和财付通。</p>
+                <p>您也可以先对7881账户进行充值再付款，7881手机版支持卡类充值。</p>
+                卡类包含：神州行话费卡、中国电信话费卡、中国联通话费卡、骏网一卡通、完美一卡通、网易一卡通、盛大一卡通、巨人一卡通。
+            </dd>
+        </dl>
+        <dl>
+            <b class="iconfont jt-down">&#xe63b;</b><b class="iconfont jt-up">&#xe63a;</b>
+            <dt>如何对7881账户进行充值？</dt>
+            <dd>
+                <p>点击个人中心→账户充值→选择充值方式→填写充值金额→点击“下一步”。</p>
+                <p>7881手机版目前支持支付宝和财付通以及卡类充值。</p>
+                <p>卡类充值受到运营商的影响到账时间为1-30分钟不等，请用户注意查看账户余额。</p>
+                您也可以通过页面底部切换到电脑版，进入个人中心使用网银、信用卡、短信支付以及柜台付款等更多支付方式对7881账户进行充值。
+            </dd>
+        </dl>
+        <dl>
+            <b class="iconfont jt-down">&#xe63b;</b><b class="iconfont jt-up">&#xe63a;</b>
+            <dt>手游充值为什么需要游戏登录密码？</dt>
+            <dd>7881采用系统化自动充值，将根据您填写的账户资料，登录您的游戏内进行充值。任何时间，7881客服都不会主动向您索要游戏密码，我们可以保证的账户安全。</dd>
+        </dl>
+        <dl>
+            <b class="iconfont jt-down">&#xe63b;</b><b class="iconfont jt-up">&#xe63a;</b>
+            <dt>手游充值迟迟不到账怎么办？</dt>
+            <dd>您的充值正常为10分钟内完成，如未及时到账，可能是因为游戏登录需排队，也可能是您的账户信息填写有误，您可拨打24小时服务热线400-187-7881进行咨询。</dd>
+        </dl>
+        <dl>
+            <b class="iconfont jt-down">&#xe63b;</b><b class="iconfont jt-up">&#xe63a;</b>
+            <dt>如何提现我的账户余额？</dt>
+            <dd>
+                <p>点击首页的个人中心→我要提现→输入提现金额→点击“提现”→完成提现。（最少提现金额为3元）</p>
+                若您还没有设置过提现账户，您需要访问电脑版设置您的第一个提现账户。
+            </dd>
+        </dl>
+        <dl>
+            <b class="iconfont jt-down">&#xe63b;</b><b class="iconfont jt-up">&#xe63a;</b>
+            <dt>支付成功，但是货没收到怎么办？</dt>
+            <dd>
+                <p>首先确认支付成功，有明确的扣款记录。</p>
+                <p>填写订单时，如游戏账号和密码填错或是其他原因，系统将会撤销订单，款项将会按支付方式源路退还。</p>
+                <p>退款到账时间，根据充值方式不同1~15个工作日。</p>
+                遇到问题可拨打24小时服务热线<a target="_blank" href="tel:02566177114">025-66177-114</a>进行咨询。
+            </dd>
+        </dl>
+        <dl>
+            <b class="iconfont jt-down">&#xe63b;</b><b class="iconfont jt-up">&#xe63a;</b>
+            <dt>7881手机版可以发布商品吗？</dt>
+            <dd>目前7881手机版可以发布手游账号，如需发布其他类目的商品，建议您用电脑或登录7881电脑版进行发布。</dd>
+        </dl>
+    </div>
+    #include("/include/foot.jetx")
+</div>
+<script language="javascript" type="text/javascript" src="//cdnjsnet.b0.upaiyun.com/jquery/1.7.2/jquery.min.js"></script>
+<script language="javascript" type="text/javascript" src="//dn-mobilechong.qbox.me/js/notice.js"></script>
+</body>
+</html>

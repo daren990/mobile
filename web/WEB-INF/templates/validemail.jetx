@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html lang="zh">
+<head>
+    <meta charset="utf-8" />
+    <title>邮箱验证 -91085触屏版-做最专业的手游服务平台</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="keywords" content="游戏交易平台，手机游戏交易，app充值，游戏币交易，网络游戏，游戏币，点卡，装备，账号，发卡发，fakafa.com" />
+    <meta name="description" content="发卡发是国内最专业手游充值服务,提供各种游戏币，手游充值，装备，账号，点卡交易信息,欢迎来到发卡发手游服务平台" />
+    <link rel="shortcut icon" type="image/x-icon" href="//dn-mobilechong.qbox.me/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="//dn-mobilechong.qbox.me/css/common.css" />
+</head>
+<body class="mWrap">
+<header class="topHd"><a href="/user/index.html" class="back">返&nbsp;&nbsp;回</a><a href="/" class="home">首页</a><span>邮箱验证</span></header>
+<section class="mContent">
+    <hgroup class="formTit">邮箱验证</hgroup>
+    <ul class="form formul">
+        <li><label>邮箱验证成功，</label><span class="blue">感谢您支持！</span></li>
+        <li class="btnArea"><input type="button" class="btn" value="返回首页" onClick="javascript:window.location.href='/'" /></li>
+    </ul>
+</section>
+#include("/include/foot.jetx")
+<script language="javascript" type="text/javascript" src="//cdnjsnet.b0.upaiyun.com/jquery/1.7.2/jquery.min.js"></script>
+<script language="javascript" type="text/javascript" src="//dn-mobilechong.qbox.me/js/m.js"></script>
+</body>
+</html>

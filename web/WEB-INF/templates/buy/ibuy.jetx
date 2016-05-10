@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+#set(com.kaduihuan.bean.User user=obj.user)
+#set(com.kaduihuan.bean.Order order=obj.order)
+#set(com.kaduihuan.bean.Game game=obj.game)
+<html lang="zh">
+<head>
+    <meta charset="utf-8" />
+    <title>苹果手游充值 - fakafa.com - 做最专业的手游服务平台</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="keywords" content="发卡发，fakafa.com，${game.gname}${game.pname}手游服务平台，${game.gname}${game.pname}官网，${game.gname}${game.pname}游戏币，游戏交易平台，网络游戏，游戏币，点卡" />
+    <meta name="description" content="发卡发是国内最专业的${game.gname}${game.pname}手游充值,提供各种${game.gname}${game.pname}手游充值，装备交易，账号交易等买卖服务,欢迎来到${game.gname}${game.pname}频道！" />
+    <link rel="shortcut icon" type="image/x-icon" href="//dn-mobilechong.qbox.me/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="//dn-mobilechong.qbox.me/css/buy.css" />
+    <link rel="stylesheet" type="text/css" href="//dn-kaduihuan.qbox.me/css/jquery.validator-0.8.0.css" />
+    <script language="javascript" type="text/javascript" src="//cdnjsnet.b0.upaiyun.com/jquery/1.7.2/jquery.min.js"></script>
+    <script charset="utf-8" lang="zh" language="javascript">
+        function showFinalmoney(){
+            var item = document.getElementById("pid");
+            var par = item.options[item.selectedIndex].id;
+            jQuery("#finalmoney").html((par*parseFloat(jQuery("#quantity").val())).toFixed(2)+"元");
+        }
+
+        function getQu() {
+
+            jQuery("#pid").empty();
+            jQuery("#pid").append("<option value=''>请选择面值</option>");
+            jQuery("#sid").empty();
+            jQuery("#sid").append("<option value=''>请选择服务器</option>");
+            jQuery("#aid").empty();
+            jQuery("#aid").append("<option value=''>请选择区服</option>");
+            jQuery("#finalmoney").html("0元");
+            if(jQuery("#oid").val()!='' && jQuery("#oid").val()!=null){
+                jQuery.ajax({
+                    type: "POST",
+                    url: "/getAreaList.html?m=" + Math.random(),
+                    data: "gid=" + jQuery("#gid").val() + "&oid=" + jQuery("#oid").val(),
+                    dataType: "json",
+                    async: false,
+                    success: function(json){
+                        jQuery("#aid").empty();
+                        jQuery.each(json, function(i, item) {
+                            jQuery("#aid").append("<option value='"+item.id+"' id='"+item.aname+"' >"+item.aname+"</option>");
+                        });
+                    }
+                });
+                jQuery.ajax({
+                    type: "POST",
+                    url: "/getParList.html?m=" + Math.random(),
+                    data: "gid=" + jQuery("#gid").val() + "&tid=1&oid=" + jQuery("#oid").val(),
+                    dataType: "json",
+                    async: false,
+                    success: function(json){
+                        jQuery("#pid").empty();
+                        jQuery.each(json, function(i, item) {
+                            jQuery("#pid").append("<option value='"+item.id+"' id='"+item.price+"' >"+item.face+"元("+item.standard+")</option>");
+                        });
+                    }
+                });
+                var item = document.getElementById("pid");
+                var par = item.options[item.selectedIndex].id;
+                jQuery("#finalmoney").html(par*jQuery("#quantity").val()*10000/10000+"元");
+                jQuery.ajax({
+                    type: "POST",
+                    url: "/getServerList.html?m=" + Math.random(),
+                    data: "gid=" + jQuery("#gid").val() + "&oid=" + jQuery("#oid").val() + "&aid=" + jQuery("#aid").val(),
+                    dataType: "json",
+                    async: false,
+                    success: function(json){
+                        jQuery("#sid").empty();
+                        jQuery.each(json, function(i, item) {
+                            jQuery("#sid").append("<option value='"+item.id+"' id='"+item.sname+"' >"+item.num+"服【"+item.sname+"】</option>");
+                        });
+                    }
+                });
+            }else{
+                jQuery("#pid").empty();
+                jQuery("#pid").append("<option value=''>请选择面值</option>");
+                jQuery("#sid").empty();
+                jQuery("#sid").append("<option value=''>请选择服务器</option>");
+                jQuery("#aid").empty();
+                jQuery("#aid").append("<option value=''>请选择区服</option>");
+                jQuery("#finalmoney").html("0元");
+            }
+        }
+
+        function getFu() {
+            jQuery.ajax({
+                type: "POST",
+                url: "/getServerList.html?m=" + Math.random(),
+                data: "gid=" + jQuery("#gid").val() + "&oid=" + jQuery("#oid").val() + "&aid=" + jQuery("#aid").val(),
+                dataType: "json",
+                async: false,
+                success: function(json){
+                    jQuery("#sid").empty();
+                    jQuery.each(json, function(i, item) {
+                        jQuery("#sid").append("<option value='"+item.id+"' id='"+item.sName+"' >"+item.num+"服【"+item.sname+"】</option>");
+                    });
+                }
+            });
+        }
+        jQuery(document).ready(function(){
+            var oid = ${(order.oid)?!0};
+            var aid = ${(order.aid)?!0};
+            var sid = ${(order.sid)?!0};
+            var pid = ${(order.pid)?!0};
+            if(oid != '' && oid != null && oid != 0){
+                jQuery("#oid").val(oid);
+                jQuery.ajax({
+                    type: "POST",
+                    url: "/getAreaList.html?m=" + Math.random(),
+                    data: "gid=" + jQuery("#gid").val() + "&oid=" + jQuery("#oid").val(),
+                    dataType: "json",
+                    async: false,
+                    success: function(json){
+                        jQuery("#aid").empty();
+                        jQuery.each(json, function(i, item) {
+                            jQuery("#aid").append("<option value='"+item.id+"' id='"+item.aname+"' >"+item.aname+"</option>");
+                        });
+                    }
+                });
+                jQuery("#aid").val(aid);
+                jQuery.ajax({
+                    type: "POST",
+                    url: "/getParList.html?m=" + Math.random(),
+                    data: "gid=" + jQuery("#gid").val() + "&tid=1&aid=" + jQuery("#aid").val(),
+                    dataType: "json",
+                    async: false,
+                    success: function(json){
+                        jQuery("#pid").empty();
+                        jQuery.each(json, function(i, item) {
+                            jQuery("#pid").append("<option value='"+item.id+"' id='"+item.price+"' >"+item.face+"元("+item.standard+")</option>");
+                        });
+                    }
+                });
+                jQuery("#pid").val(pid);
+                var item = document.getElementById("pid");
+                var par = item.options[item.selectedIndex].id;
+                jQuery("#finalmoney").html(par*jQuery("#quantity").val()*10000/10000+"元");
+                jQuery.ajax({
+                    type: "POST",
+                    url: "/getServerList.html?m=" + Math.random(),
+                    data: "gid=" + jQuery("#gid").val() + "&oid=" + jQuery("#oid").val() + "&aid=" + jQuery("#aid").val(),
+                    dataType: "json",
+                    async: false,
+                    success: function(json){
+                        jQuery("#sid").empty();
+                        jQuery.each(json, function(i, item) {
+                            jQuery("#sid").append("<option value='"+item.id+"' id='"+item.sname+"' >"+item.num+"服【"+item.sname+"】</option>");
+                        });
+                    }
+                });
+                jQuery("#sid").val(sid);
+            }else{
+                jQuery("#pid").empty();
+                jQuery("#pid").append("<option value=''>请选择面值</option>");
+                jQuery("#sid").empty();
+                jQuery("#sid").append("<option value=''>请选择服务器</option>");
+                jQuery("#aid").empty();
+                jQuery("#aid").append("<option value=''>请选择区服</option>");
+                jQuery("#finalmoney").html("0元");
+            }
+        });
+    </script>
+</head>
+<body class="mWrap">
+<header class="topHd"><a href="javascript:returnPage();" class="back">返回</a><a href="/" class="home">首页</a>
+    <span>${game.gname}苹果版官方代充</span></header>
+<form id="goodsForm" method="post" action="/ibuy.html" autocomplete="off" data-validator-option="{theme:'simple_bottom',stopOnError:true}">
+    <section class="mContent">
+        <ul class="form">
+            <li>
+                <div class="cuselect">
+                    <input name="gid" id="gid" type="hidden" value="${(game.id)?!'0'}"/>
+                    <select id="oid" name="oid" class="select-op" style="font-weight:700;color:#36c;" onchange="getQu()" data-rule="运营商: required;">
+                        <option value="">请选择运营版本</option>
+                        #if (obj.operators)
+                        #for (com.kaduihuan.bean.Operator operator : obj.operators)
+                        <option value="${operator.id}">${operator.oname} </option>
+                        #end
+                        #end
+                    </select>
+                </div>
+            </li>
+            <li id="quLi" style="display:block">
+                <div class="cuselect">
+                    <select id="aid" name="aid" class="select-op" onchange="getFu()" data-rule="区服: required;">
+                        <option value="">请选择游戏区</option>
+                    </select>
+                </div>
+            </li>
+            <li id="fuLi" style="display: block">
+                <div class="cuselect">
+                    <select class="select-op" id="sid" name="sid" data-rule="服务器: required;">
+                        <option value="">请选择服务器</option>
+                    </select>
+                </div>
+            </li>
+            <li>
+                <div class="cuselect">
+                    <select id="pid" name="pid" data-rule="面值: required;" onchange="showFinalmoney();">
+                        <option value="">请选择面值</option>
+                    </select>
+                </div>
+            </li>
+            <li>
+                <div class="cuselect">
+                    <select id="quantity" name="quantity" onchange="showFinalmoney();">
+                        <option value="1">充一份</option>
+                        <option value="2">充二份</option>
+                        <option value="3">充三份</option>
+                        <option value="4">充四份</option>
+                        <option value="5">充五份</option>
+                        <option value="6">充六份</option>
+                        <option value="7">充七份</option>
+                        <option value="8">充八份</option>
+                        <option value="9">充九份</option>
+                        <option value="10">充十份</option>
+                    </select>
+                </div>
+            </li>
+            <li><input type="text" name="account" maxlength="50" id="account" class="input" placeholder="你在【${game.gname}苹果版】中的登录账号" data-rule="登录帐号: required;" /></li>
+            <li><input type="password" name="pswd" maxlength="32" id="pswd" class="input" placeholder="你在【${game.gname}苹果版】中的登录密码" data-rule="登录密码: required;" /></li>
+            <li><input type="text" name="juese" id="juese" placeholder="你在【${game.gname}苹果版】中的角色名称" maxlength="50" class="input" data-rule="角色名称: required;"/></li>
+            <li><input id="mobile" name="mobile" type="text" value="${user.mobile}" class="input" maxlength="11" placeholder="请填写手机号码便于联系您" data-rule="手机号码: required;mobile;"/></li>
+            <li><input id="qq" name="qq" type="text" class="input" value="${user.qq}" maxlength="11" placeholder="请填写QQ号码便于联系您" data-rule="QQ号码: required;qq;length[5~11];"/></li>
+            <li>应付金额: <span class="money orange" id="finalmoney">0元</span></li>
+            <li class="btnArea"><input type="submit" class="btn" value="确认订单" id="hlOK"/></li>
+        </ul>
+        <blockquote class="tip">
+            <dl>
+                <dt>为什么需要游戏登录密码?</dt>
+                <dd>充值系统将根据您填写的游戏登录信息，自动登录到您的游戏内进行充值。任何时间，发卡发客服不会主动向您索要游戏登录密码。</dd>
+                <dd>您的充值将在20分钟左右完成，如未及时到账，可拨打服务热线<a style="color: #2bb2a3" target="_blank" href="tel:4000191085">025-66177-114</a>或<a style="color: #2bb2a3" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=100110566&site=qq&menu=yes">在线客服</a>咨询。</dd>
+            </dl>
+        </blockquote>
+    </section>
+</form>
+#include("/include/foot.jetx")
+<script language="javascript" type="text/javascript" src="//dn-kaduihuan.qbox.me/js/jquery.validator-0.8.0.js"></script>
+<script language="javascript" type="text/javascript" src="//dn-kaduihuan.qbox.me/js/jquery.validator-0.8.0.lang.zh-CN.js"></script>
+<script language="javascript" type="text/javascript" src="//dn-mobilechong.qbox.me/js/m.js"></script>
+</body>
+</html>

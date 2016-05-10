@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8" />
+    <title>站点地图 - 发卡发手游交易平台</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="发卡发手游交易平台以优质服务为您提供方便快捷的手游充值、手游交易服务，欢迎来到部落冲突、刀塔传奇、雷霆战机、天天酷跑等热门苹果手游充值专题页" />
+    <meta name="keywords" content="苹果手游充值平台，苹果代充，苹果代充专题页" />
+    <link rel="shortcut icon" type="image/x-icon" href="//dn-mobilechong.qbox.me/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="//dn-mobilechong.qbox.me/css/common.css" />
+    <link rel="stylesheet" type="text/css" href="//dn-mobilechong.qbox.me/css/com-min.css" />
+</head>
+<body>
+<div class="viewrap">
+    <header class="topHd"><a href="/apple.html" class="back">&#xe635;</a><a href="/" class="home">&#xe634;</a><span>站点地图</span></header>
+    <section class="mContent">
+        <ul class="com-list" style="display:block;">
+            #if(obj.games)
+            #for (com.kaduihuan.bean.Game game : obj.games)
+            <li>
+                <a href="/buy-i-${game.id}-${game.pinyin}.html" title="${game.pinyin}"><p><cite>${(game.py).substring(0,1)}</cite>${game.gname}${game.pname}</p>
+                <ins class="sbtn right" onclick="location='/buy-i-${game.id}-${game.pinyin}.html'">充 值</ins></a>
+            </li>
+            #end
+            #end
+        </ul>
+    </section>
+    #include("/include/foot.jetx")
+</div>
+<script language="javascript" type="text/javascript" src="//cdnjsnet.b0.upaiyun.com/jquery/1.7.2/jquery.min.js"></script>
+</body>
+</html>

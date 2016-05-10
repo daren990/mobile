@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8" />
+    <title>苹果#if(obj.sort=='HOT')热门游戏#else ${obj.sort}字母排序#end - 苹果手游充值 - 发卡发手游服务平台</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="keywords" content="游戏交易平台，手机游戏交易，app充值，游戏币交易，网络游戏，游戏币，点卡，装备，账号，发卡发，fakafa.com" />
+    <meta name="description" content="发卡发是国内最专业手游充值服务,提供各种游戏币，手游充值，装备，账号，点卡交易信息,欢迎来到发卡发手游服务平台" />
+    <link rel="shortcut icon" type="image/x-icon" href="//dn-mobilechong.qbox.me/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="//dn-mobilechong.qbox.me/css/common.css" />
+    <link rel="stylesheet" type="text/css" href="//dn-mobilechong.qbox.me/css/com-min.css" />
+</head>
+<body>
+<div class="viewrap">
+    <header class="topHd"><a href="javascript:history.back();" class="back">&#xe635;</a><a href="/" class="home">&#xe634;</a><span>苹果手游充值</span></header>
+    <section class="letter-nav">
+        <ul>
+            <li onclick="location='/apple.html'" #if(obj.sort=='HOT')class="on"#end>热</li>
+            <li onclick="location='/apple-sort-ABCDEF.html'" #if(obj.sort=='ABCDEF')class="on"#end>ABCDEF</li>
+            <li onclick="location='/apple-sort-GHIJK.html'" #if(obj.sort=='GHIJK')class="on"#end>GHIJK</li>
+            <li onclick="location='/apple-sort-LMNOP.html'" #if(obj.sort=='LMNOP')class="on"#end>LMNOP</li>
+            <li onclick="location='/apple-sort-QRSTU.html'" #if(obj.sort=='QRSTU')class="on #end>QRSTU</li>
+            <li onclick="location='/apple-sort-VWXYZ.html'" #if(obj.sort=='VWXYZ')class="on"#end>VWXYZ</li>
+        </ul>
+    </section>
+    <section class="mContent">
+        <ul class="com-list" style="display:block;">
+            #for (com.kaduihuan.bean.Game game : obj.games)
+            <li #if(obj.sort=='HOT')class="hot"#end>
+                <a href="/buy-i-${game.id}-${game.pinyin}.html"><p><cite>#if(obj.sort=='HOT')热#else${(game.py).substring(0,1)}#end</cite>${game.gname}苹果版</p>
+                    <ins class="sbtn right" onclick="location='/buy-i-${game.id}.html'">充 值</ins></a>
+            </li>
+            #end
+        </ul>
+    </section>
+    #include("/include/foot.jetx")
+</div>
+<script language="javascript" type="text/javascript" src="//cdnjsnet.b0.upaiyun.com/jquery/1.7.2/jquery.min.js"></script>
+</body>
+</html>
